@@ -1,6 +1,7 @@
 namespace Bounan.Common.Models;
 
-public interface IDwnQueueResponse
+public interface IDwnQueueResponse<out TVideoKey>
+    where TVideoKey : IVideoKey
 {
-	IVideoKey? VideoKey { get; }
+    TVideoKey? VideoKey { get; }
 }
