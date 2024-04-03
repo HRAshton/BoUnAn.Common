@@ -1,6 +1,6 @@
 <Project>
     <PropertyGroup>
-        <NoWarn>SA1633;SA1200;SA1309;SA1101;SA1134;SA1600;SA1602</NoWarn> <!-- Remove 160* -->
+        <NoWarn>SA1633;SA1200;SA1309;SA1101;SA1134;SA1600;SA1601;SA1602</NoWarn> <!-- Remove 160* -->
     </PropertyGroup>
 
     <ItemGroup>
