@@ -2,9 +2,9 @@
 
 public interface IVideoKey
 {
-	int MyAnimeListId { get; }
+    int MyAnimeListId { get; }
 
-	string Dub { get; }
+    string Dub { get; }
 
-	int Episode { get; }
+    int Episode { get; }
 }

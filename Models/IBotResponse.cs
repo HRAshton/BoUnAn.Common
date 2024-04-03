@@ -4,7 +4,7 @@ namespace Bounan.Common.Models;
 
 public interface IBotResponse
 {
-	VideoStatus Status { get; }
+    VideoStatus Status { get; }
 
-	string? FileId { get; }
+    string? FileId { get; }
 }

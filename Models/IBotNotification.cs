@@ -1,14 +1,8 @@
 ﻿namespace Bounan.Common.Models;
 
-public interface IBotNotification
+public interface IBotNotification : IVideoKey
 {
-	ICollection<long> ChatIds { get; }
+    ICollection<long> ChatIds { get; }
 
-	int MyAnimeListId { get; }
-
-	string Dub { get; }
-
-	int Episode { get; }
-
-	string? FileId { get; }
+    string? FileId { get; }
 }

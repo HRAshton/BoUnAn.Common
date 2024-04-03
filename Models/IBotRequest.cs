@@ -1,12 +1,6 @@
 namespace Bounan.Common.Models;
 
-public interface IBotRequest
+public interface IBotRequest : IVideoKey
 {
-	int MyAnimeListId { get; }
-
-	string Dub { get; }
-
-	int Episode { get; }
-
-	long ChatId { get; }
+    long ChatId { get; }
 }

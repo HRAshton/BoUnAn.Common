@@ -8,4 +8,6 @@
     <AssemblyName>Bounan.Common</AssemblyName>
   </PropertyGroup>
 
+  <Import Project="..\Common\StyleCop.props"/>
+
 </Project>
