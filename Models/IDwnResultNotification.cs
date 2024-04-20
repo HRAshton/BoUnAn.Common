@@ -2,5 +2,5 @@ namespace Bounan.Common.Models;
 
 public interface IDwnResultNotification : IVideoKey
 {
-    string? MessageId { get; }
+    int? MessageId { get; }
 }
