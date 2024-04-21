@@ -6,5 +6,5 @@ public interface IBotResponse
 {
     VideoStatus Status { get; }
 
-    int? MessageId { get; }
+    string? MessageId { get; }
 }

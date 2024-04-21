@@ -4,5 +4,5 @@ public interface IBotNotification : IVideoKey
 {
     ICollection<long> ChatIds { get; }
 
-    int? MessageId { get; }
+    string? MessageId { get; }
 }
