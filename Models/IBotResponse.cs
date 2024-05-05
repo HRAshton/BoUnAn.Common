@@ -7,4 +7,6 @@ public interface IBotResponse
     VideoStatus Status { get; }
 
     int? MessageId { get; }
+
+    Scenes? Scenes { get; }
 }
