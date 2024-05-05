@@ -5,4 +5,6 @@ public record Scenes
     public Interval<float>? Opening { get; init; }
 
     public Interval<float>? Ending { get; init; }
+
+    public Interval<float>? SceneAfterEnding { get; init; }
 }
