@@ -14,4 +14,9 @@ public interface IVideoDownloadedNotification : IVideoKey
     /// Gets MyAnimeList ID of the anime.
     /// </summary>
     int? MessageId { get; }
+
+    /// <summary>
+    /// Gets the scenes of the video.
+    /// </summary>
+    Scenes? Scenes { get; }
 }

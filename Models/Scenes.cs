@@ -2,7 +2,7 @@
 
 public record Scenes
 {
-    public required Interval<float> Opening { get; init; }
+    public Interval<float>? Opening { get; init; }
 
-    public required Interval<float> Ending { get; init; }
+    public Interval<float>? Ending { get; init; }
 }
