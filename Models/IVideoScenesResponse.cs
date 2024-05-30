@@ -4,5 +4,5 @@ public interface IVideoScenesResponse
 {
     VideoKey VideoKey { get; }
 
-    Scenes? Scenes { get; }
+    Scenes Scenes { get; }
 }
