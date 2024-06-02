@@ -2,7 +2,5 @@
 
 public interface IVideoScenesResponse
 {
-    VideoKey VideoKey { get; }
-
-    Scenes Scenes { get; }
+    IEnumerable<IVideoScenesResponseItem> Items { get; }
 }
