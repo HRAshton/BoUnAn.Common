@@ -1,6 +1,7 @@
 ﻿namespace Bounan.Common.Models;
 
-public interface IVideoScenesResponse
+public interface IVideoScenesResponse<T>
+    where T : IVideoScenesResponseItem
 {
-    IEnumerable<IVideoScenesResponseItem> Items { get; }
+    ICollection<T> Items { get; }
 }
