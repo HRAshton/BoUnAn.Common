@@ -1,6 +1,6 @@
 using Bounan.Common.Enums;
 
-namespace Bounan.Common.Models;
+namespace Bounan.Common.Models.DirectInteraction.Bot;
 
 public interface IBotResponse
 {

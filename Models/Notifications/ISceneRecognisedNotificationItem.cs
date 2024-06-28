@@ -1,4 +1,4 @@
-﻿namespace Bounan.Common.Models;
+﻿namespace Bounan.Common.Models.Notifications;
 
 /// <summary>
 /// Information about scenes recognised in a video.
