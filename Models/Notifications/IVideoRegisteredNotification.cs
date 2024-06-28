@@ -1,7 +1,6 @@
 ﻿namespace Bounan.Common.Models.Notifications;
 
 /// <summary>
-/// Notification that a video (or batch of videos) has been registered.
-/// It does not contain any data, it's just a signal.
+/// Notification that a video has been registered.
 /// </summary>
 public interface IVideoRegisteredNotification;

@@ -1,4 +1,4 @@
-﻿namespace Bounan.Common.Models;
+﻿namespace Bounan.Common.Models.DirectInteraction.Matcher;
 
 public interface IMatcherResponse
 {

@@ -4,11 +4,5 @@
 /// Notification that a scene(s) has been recognised / failed to recognise.
 /// </summary>
 /// <typeparam name="T">The type of the items of the notification.</typeparam>
-public interface ISceneRecognisedNotification<T>
-    where T : ISceneRecognisedNotificationItem
-{
-    /// <summary>
-    /// Gets the items of the notification.
-    /// </summary>
-    public ICollection<T> Items { get; }
-}
+public interface ISceneRecognisedNotification<T> : IBundledModel<T>
+    where T : ISceneRecognisedNotificationItem;
