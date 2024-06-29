@@ -4,44 +4,44 @@
  * Key to identify a video.
  */
 export type VideoKey = {
-    myAnimeListId: number;
-    dub: string;
-    episode: number;
+    MyAnimeListId: number;
+    Dub: string;
+    Episode: number;
 };
 
 /**
  * Interval of time in seconds.
  */
 export type Interval = {
-    start: number;
-    end: number;
+    Start: number;
+    End: number;
 };
 
 /**
  * Scenes of a video. If a scene is not present, it means that it is not recognised.
  */
 export type Scenes = {
-    opening?: Interval;
-    ending?: Interval;
-    sceneAfterEnding?: Interval;
+    Opening?: Interval;
+    Ending?: Interval;
+    SceneAfterEnding?: Interval;
 };
 
 export type SceneRecognisedNotificationItem = VideoKey & {
-    scenes?: Scenes;
+    Scenes?: Scenes;
 };
 
 /**
  * Notification that video scenes have been recognised (for multiple videos at once)
  */
 export type SceneRecognisedNotification = {
-    items: Array<SceneRecognisedNotificationItem>;
+    Items: Array<SceneRecognisedNotificationItem>;
 };
 
 /**
  * Notification that a video has been downloaded
  */
 export type VideoDownloadedNotification = VideoKey & {
-    messageId?: number;
+    MessageId?: number;
 };
 
 export type VideoRegisteredNotificationItem = VideoKey;
@@ -50,55 +50,55 @@ export type VideoRegisteredNotificationItem = VideoKey;
  * Notification that a video has been registered (for multiple videos at once)
  */
 export type VideoRegisteredNotification = {
-    items: Array<VideoRegisteredNotificationItem>;
+    Items: Array<VideoRegisteredNotificationItem>;
 };
 
 /**
  * List of a videos to match
  */
 export type MatcherResponse = {
-    videosToMatch: Array<VideoKey>;
+    VideosToMatch: Array<VideoKey>;
 };
 
 export type MatcherResultRequestItem = VideoKey & {
-    scenes: Scenes;
+    Scenes: Scenes;
 };
 
 /**
  * Request to send the result of the matching
  */
 export type MatcherResultRequest = {
-    items: Array<MatcherResultRequestItem>;
+    Items: Array<MatcherResultRequestItem>;
 };
 
 /**
  * A video to download
  */
 export type DownloaderResponse = {
-    videoKey?: VideoKey;
+    VideoKey?: VideoKey;
 };
 
 /**
  * Request to send the result of the download
  */
 export type DownloaderResultRequest = VideoKey & {
-    messageId?: number;
+    MessageId?: number;
 };
 
 /**
  * Request to send from the bot tp AniMan
  */
 export type BotRequest = VideoKey & {
-    chatId: number;
+    ChatId: number;
 };
 
 /**
  * Response to send from AniMan to the bot
  */
 export type BotResponse = {
-    status: VideoStatus;
-    messageId?: number;
-    scenes?: Scenes;
+    Status: VideoStatus;
+    MessageId?: number;
+    Scenes?: Scenes;
 };
 
 /**

@@ -8,42 +8,42 @@ components:
       type: object
       description: Key to identify a video.
       properties:
-        myAnimeListId:
+        MyAnimeListId:
           type: integer
-        dub:
+        Dub:
           type: string
-        episode:
+        Episode:
           type: integer
       required:
-        - myAnimeListId
-        - dub
-        - episode
+        - MyAnimeListId
+        - Dub
+        - Episode
       additionalProperties: false
     
     Interval:
       type: object
       description: Interval of time in seconds.
       properties:
-        start:
+        Start:
           type: number
           format: float
-        end:
+        End:
           type: number
           format: float
       required:
-        - start
-        - end
+        - Start
+        - End
       additionalProperties: false
     
     Scenes:
       type: object
       description: Scenes of a video. If a scene is not present, it means that it is not recognised.
       properties:
-        opening:
+        Opening:
           $ref: '#/components/schemas/Interval'
-        ending:
+        Ending:
           $ref: '#/components/schemas/Interval'
-        sceneAfterEnding:
+        SceneAfterEnding:
           $ref: '#/components/schemas/Interval'
 
     SceneRecognisedNotificationItem:
@@ -51,7 +51,7 @@ components:
         - $ref: '#/components/schemas/VideoKey'
         - type: object
           properties:
-            scenes:
+            Scenes:
               $ref: '#/components/schemas/Scenes'
       additionalProperties: false
 
@@ -59,12 +59,12 @@ components:
       type: object
       description: Notification that video scenes have been recognised (for multiple videos at once)
       properties:
-        items:
+        Items:
           type: array
           items:
             $ref: '#/components/schemas/SceneRecognisedNotificationItem'
       required:
-        - items
+        - Items
       additionalProperties: false
     
     VideoDownloadedNotification:
@@ -73,7 +73,7 @@ components:
         - $ref: '#/components/schemas/VideoKey'
         - type: object
           properties:
-            messageId:
+            MessageId:
               type: integer
               format: int32
     
@@ -85,24 +85,24 @@ components:
       type: object
       description: Notification that a video has been registered (for multiple videos at once)
       properties:
-        items:
+        Items:
           type: array
           items:
             $ref: '#/components/schemas/VideoRegisteredNotificationItem'
       required:
-        - items
+        - Items
       additionalProperties: false
     
     MatcherResponse:
       type: object
       description: List of a videos to match
       properties:
-        videosToMatch:
+        VideosToMatch:
           type: array
           items:
             $ref: '#/components/schemas/VideoKey'
       required:
-        - videosToMatch
+        - VideosToMatch
       additionalProperties: false
     
     MatcherResultRequestItem:
@@ -110,29 +110,29 @@ components:
         - $ref: '#/components/schemas/VideoKey'
         - type: object
           properties:
-            scenes:
+            Scenes:
               $ref: '#/components/schemas/Scenes'
           required:
-            - scenes
+            - Scenes
       additionalProperties: false
 
     MatcherResultRequest:
       type: object
       description: Request to send the result of the matching
       properties:
-        items:
+        Items:
           type: array
           items:
             $ref: '#/components/schemas/MatcherResultRequestItem'
       required:
-        - items
+        - Items
       additionalProperties: false
     
     DownloaderResponse:
       type: object
       description: A video to download
       properties:
-        videoKey:
+        VideoKey:
           $ref: '#/components/schemas/VideoKey'
       additionalProperties: false
     
@@ -142,7 +142,7 @@ components:
         - $ref: '#/components/schemas/VideoKey'
         - type: object
           properties:
-            messageId:
+            MessageId:
               type: integer
               format: int32
       additionalProperties: false
@@ -154,26 +154,26 @@ components:
         - $ref: '#/components/schemas/VideoKey'
         - type: object
           properties:
-            chatId:
+            ChatId:
               type: integer
               format: int64
           required:
-            - chatId
+            - ChatId
       additionalProperties: false
     
     BotResponse:
       type: object
       description: Response to send from AniMan to the bot
       properties:
-        status:
+        Status:
           $ref: '#/components/schemas/VideoStatus'
-        messageId:
+        MessageId:
           type: integer
           format: int32
-        scenes:
+        Scenes:
           $ref: '#/components/schemas/Scenes'
       required:
-        - status
+        - Status
       additionalProperties: false
     
     VideoStatus:
