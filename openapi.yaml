@@ -1,0 +1,193 @@
+openapi: "3.1.0"
+info:
+  title: Bounan.Common models
+  version: 2.0.0
+components:
+  schemas:
+    VideoKey:
+      type: object
+      description: Key to identify a video.
+      properties:
+        MyAnimeListId:
+          type: integer
+        Dub:
+          type: string
+        Episode:
+          type: integer
+      required:
+        - MyAnimeListId
+        - Dub
+        - Episode
+      additionalProperties: false
+    
+    Interval:
+      type: object
+      description: Interval of time in seconds.
+      properties:
+        Start:
+          type: number
+          format: float
+        End:
+          type: number
+          format: float
+      required:
+        - Start
+        - End
+      additionalProperties: false
+    
+    Scenes:
+      type: object
+      description: Scenes of a video. If a scene is not present, it means that it is not recognised.
+      properties:
+        Opening:
+          $ref: '#/components/schemas/Interval'
+        Ending:
+          $ref: '#/components/schemas/Interval'
+        SceneAfterEnding:
+          $ref: '#/components/schemas/Interval'
+
+    SceneRecognisedNotificationItem:
+      properties:
+        VideoKey:
+          $ref: '#/components/schemas/VideoKey'
+        Scenes:
+          $ref: '#/components/schemas/Scenes'
+      required:
+        - VideoKey
+      additionalProperties: false
+
+    SceneRecognisedNotification:
+      type: object
+      description: Notification that video scenes have been recognised (for multiple videos at once)
+      properties:
+        Items:
+          type: array
+          items:
+            $ref: '#/components/schemas/SceneRecognisedNotificationItem'
+      required:
+        - Items
+      additionalProperties: false
+    
+    VideoDownloadedNotification:
+      description: Notification that a video has been downloaded
+      properties:
+        VideoKey:
+          $ref: '#/components/schemas/VideoKey'
+        MessageId:
+          type: integer
+          format: int32
+      required:
+        - VideoKey
+    
+    VideoRegisteredNotificationItem:
+      properties:
+        VideoKey:
+          $ref: '#/components/schemas/VideoKey'
+      required:
+        - VideoKey
+    
+    VideoRegisteredNotification:
+      type: object
+      description: Notification that a video has been registered (for multiple videos at once)
+      properties:
+        Items:
+          type: array
+          items:
+            $ref: '#/components/schemas/VideoRegisteredNotificationItem'
+      required:
+        - Items
+      additionalProperties: false
+    
+    MatcherResponse:
+      type: object
+      description: List of a videos to match
+      properties:
+        VideosToMatch:
+          type: array
+          items:
+            $ref: '#/components/schemas/VideoKey'
+      required:
+        - VideosToMatch
+      additionalProperties: false
+    
+    MatcherResultRequestItem:
+      properties:
+        VideoKey:
+          $ref: '#/components/schemas/VideoKey'
+        Scenes:
+          $ref: '#/components/schemas/Scenes'
+      required:
+        - VideoKey
+        - Scenes
+      additionalProperties: false
+
+    MatcherResultRequest:
+      type: object
+      description: Request to send the result of the matching
+      properties:
+        Items:
+          type: array
+          items:
+            $ref: '#/components/schemas/MatcherResultRequestItem'
+      required:
+        - Items
+      additionalProperties: false
+    
+    DownloaderResponse:
+      type: object
+      description: A video to download
+      properties:
+        VideoKey:
+          $ref: '#/components/schemas/VideoKey'
+      additionalProperties: false
+    
+    DownloaderResultRequest:
+      description: Request to send the result of the download
+      properties:
+        VideoKey:
+          $ref: '#/components/schemas/VideoKey'
+        MessageId:
+          type: integer
+          format: int32
+      required:
+        - VideoKey
+      additionalProperties: false
+    
+    BotRequest:
+      type: object
+      description: Request to send from the bot tp AniMan
+      properties:
+        VideoKey:
+          $ref: '#/components/schemas/VideoKey'
+        ChatId:
+          type: integer
+          format: int64
+      required:
+        - VideoKey
+        - ChatId
+      additionalProperties: false
+    
+    BotResponse:
+      type: object
+      description: Response to send from AniMan to the bot
+      properties:
+        Status:
+          $ref: '#/components/schemas/VideoStatus'
+        MessageId:
+          type: integer
+          format: int32
+        Scenes:
+          $ref: '#/components/schemas/Scenes'
+      required:
+        - Status
+      additionalProperties: false
+    
+    VideoStatus:
+      type: string
+      description: Status of a video
+      enum:
+        - Pending
+        - Downloading
+        - Downloaded
+        - Failed
+        - NotAvailable
