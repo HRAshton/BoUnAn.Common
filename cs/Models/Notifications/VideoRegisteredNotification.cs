@@ -3,4 +3,4 @@
 /// <summary>
 /// Notification that a video has been registered.
 /// </summary>
-public interface IVideoRegisteredNotification;
+public record VideoRegisteredNotification;
