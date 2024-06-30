@@ -4,7 +4,7 @@ namespace Bounan.Common.Models.DirectInteraction.Bot;
 
 public interface IBotResponse
 {
-    VideoStatus Status { get; }
+    string Status { get; }
 
     int? MessageId { get; }
 

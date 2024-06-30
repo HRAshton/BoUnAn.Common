@@ -1,6 +1,8 @@
 namespace Bounan.Common.Models.DirectInteraction.Downloader;
 
-public interface IDwnResultRequest : IVideoKey
+public interface IDwnResultRequest
 {
+    VideoKey VideoKey { get; }
+
     int? MessageId { get; }
 }

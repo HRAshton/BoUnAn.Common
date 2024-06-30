@@ -1,6 +1,8 @@
 namespace Bounan.Common.Models.DirectInteraction.Bot;
 
-public interface IBotRequest : IVideoKey
+public interface IBotRequest
 {
+    VideoKey VideoKey { get; }
+
     long ChatId { get; }
 }

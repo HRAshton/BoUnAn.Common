@@ -3,8 +3,10 @@
 /// <summary>
 /// Notification that a video has been downloaded / failed to download.
 /// </summary>
-public interface IVideoDownloadedNotification : IVideoKey
+public interface IVideoDownloadedNotification
 {
+    VideoKey VideoKey { get; }
+
     /// <summary>
     /// Gets IDs of the chats (users) to send the notification to.
     /// </summary>

@@ -2,5 +2,9 @@
 
 public interface IMatcherResponse
 {
-    ICollection<VideoKey> VideosToMatch { get; init; }
+    int MyAnimeListId { get; }
+
+    string Dub { get; }
+
+    ICollection<int> Episodes { get; }
 }
