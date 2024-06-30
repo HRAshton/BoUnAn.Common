@@ -6,3 +6,8 @@ obj/
 riderModule.iml
 /_ReSharper.Caches/
 *.user
+node_modules/
+
+# Whitelist py-generated/bounan_common/models directory
+py_generated/*
+!py_generated/bounan_common/
