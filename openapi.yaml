@@ -76,6 +76,13 @@ components:
         MessageId:
           type: integer
           format: int32
+        SubscriberChatIds:
+          type: array
+          items:
+            type: integer
+            format: int64
+        Scenes:
+          $ref: '#/components/schemas/Scenes'
       required:
         - VideoKey
     

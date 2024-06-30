@@ -24,7 +24,7 @@ public record SceneRecognisedNotificationItem(VideoKey VideoKey, Scenes? Scenes)
 
 public record SceneRecognisedNotification(List<SceneRecognisedNotificationItem> Items);
 
-public record VideoDownloadedNotification(VideoKey VideoKey, int? MessageId);
+public record VideoDownloadedNotification(VideoKey VideoKey, int? MessageId, List<long>? SubscriberChatIds, Scenes? Scenes);
 
 public record VideoRegisteredNotificationItem(VideoKey VideoKey);
 
@@ -46,6 +46,7 @@ public record BotResponse(VideoStatus Status, int? MessageId, Scenes? Scenes);
 
 public enum VideoStatus
 {
+    Unknown,
     Pending,
     Downloading,
     Downloaded,

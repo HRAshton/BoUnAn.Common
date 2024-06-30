@@ -27,6 +27,8 @@ export interface SceneRecognisedNotification {
 export interface VideoDownloadedNotification {
     VideoKey: VideoKey;
     MessageId?: number;
+    SubscriberChatIds?: number[];
+    Scenes?: Scenes;
 }
 
 export interface VideoRegisteredNotificationItem {
