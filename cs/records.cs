@@ -24,7 +24,7 @@ public record SceneRecognisedNotificationItem(VideoKey VideoKey, Scenes? Scenes)
 
 public record SceneRecognisedNotification(List<SceneRecognisedNotificationItem> Items);
 
-public record VideoDownloadedNotification(VideoKey VideoKey, int? MessageId, List<long>? SubscriberChatIds, Scenes? Scenes);
+public record VideoDownloadedNotification(VideoKey VideoKey, int? MessageId, List<long>? SubscriberChatIds, Scenes? Scenes, PublishingDetails? PublishingDetails);
 
 public record VideoRegisteredNotificationItem(VideoKey VideoKey);
 
@@ -42,7 +42,7 @@ public record DownloaderResultRequest(VideoKey VideoKey, int? MessageId);
 
 public record BotRequest(VideoKey VideoKey, long ChatId);
 
-public record BotResponse(VideoStatus Status, int? MessageId, Scenes? Scenes);
+public record BotResponse(VideoStatus Status, int? MessageId, Scenes? Scenes, PublishingDetails? PublishingDetails);
 
 public enum VideoStatus
 {
@@ -53,3 +53,9 @@ public enum VideoStatus
     Failed,
     NotAvailable,
 }
+
+public record PublishingDetails(int ThreadId, int MessageId);
+
+public record PublisherResultRequestItem(VideoKey VideoKey, PublishingDetails PublishingDetails);
+
+public record PublisherResultRequest(List<PublisherResultRequestItem> Items);
