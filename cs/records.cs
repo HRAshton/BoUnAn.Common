@@ -59,3 +59,7 @@ public record PublishingDetails(int ThreadId, int MessageId);
 public record PublisherResultRequestItem(VideoKey VideoKey, PublishingDetails PublishingDetails);
 
 public record PublisherResultRequest(List<PublisherResultRequestItem> Items);
+
+public record RegisterVideosRequestItem(VideoKey VideoKey);
+
+public record RegisterVideosRequest(List<RegisterVideosRequestItem> Items);

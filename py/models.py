@@ -134,3 +134,13 @@ class PublisherResultRequestItem:
 @dataclass
 class PublisherResultRequest:
     items: List[PublisherResultRequestItem]
+
+@dataclass_json(letter_case=LetterCase.PASCAL)
+@dataclass
+class RegisterVideosRequestItem:
+    video_key: VideoKey
+
+@dataclass_json(letter_case=LetterCase.PASCAL)
+@dataclass
+class RegisterVideosRequest:
+    items: List[RegisterVideosRequestItem]

@@ -233,6 +233,28 @@ components:
         - Items
       additionalProperties: false
     
+    RegisterVideosRequestItem:
+      type: object
+      description: Request to register a video
+      properties:
+        VideoKey:
+          $ref: '#/components/schemas/VideoKey'
+      required:
+        - VideoKey
+      additionalProperties: false
+    
+    RegisterVideosRequest:
+      type: object
+      description: Request to register videos
+      properties:
+        Items:
+          type: array
+          items:
+            $ref: '#/components/schemas/RegisterVideosRequestItem'
+      required:
+        - Items
+      additionalProperties: false
+
     VideoStatus:
       type: string
       description: Status of a video

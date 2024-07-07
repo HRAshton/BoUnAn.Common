@@ -88,4 +88,12 @@ export interface PublisherResultRequest {
     Items: PublisherResultRequestItem[];
 }
 
+export interface RegisterVideosRequestItem {
+    VideoKey: VideoKey;
+}
+
+export interface RegisterVideosRequest {
+    Items: RegisterVideosRequestItem[];
+}
+
 export type VideoStatus = 'Pending' | 'Downloading' | 'Downloaded' | 'Failed' | 'NotAvailable';
