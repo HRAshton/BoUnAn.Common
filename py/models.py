@@ -15,6 +15,13 @@ class VideoKey:
 
 @dataclass_json(letter_case=LetterCase.PASCAL)
 @dataclass
+class PublishingDetails:
+    thread_id: int
+    message_id: int
+
+
+@dataclass_json(letter_case=LetterCase.PASCAL)
+@dataclass
 class Interval:
     start: float
     end: float
@@ -48,6 +55,7 @@ class VideoDownloadedNotification:
     message_id: Optional[int] = None
     subscriber_chat_ids: Optional[List[int]] = None
     scenes: Optional[Scenes] = None
+    publishing_details: Optional[PublishingDetails] = None
 
 
 @dataclass_json(letter_case=LetterCase.PASCAL)
@@ -115,3 +123,29 @@ class BotResponse:
     status: VideoStatus
     message_id: Optional[int] = None
     scenes: Optional[Scenes] = None
+    publishing_details: Optional[PublishingDetails] = None
+
+
+@dataclass_json(letter_case=LetterCase.PASCAL)
+@dataclass
+class PublisherResultRequestItem:
+    video_key: VideoKey
+    publishing_details: PublishingDetails
+
+
+@dataclass_json(letter_case=LetterCase.PASCAL)
+@dataclass
+class PublisherResultRequest:
+    items: List[PublisherResultRequestItem]
+
+
+@dataclass_json(letter_case=LetterCase.PASCAL)
+@dataclass
+class RegisterVideosRequestItem:
+    video_key: VideoKey
+
+
+@dataclass_json(letter_case=LetterCase.PASCAL)
+@dataclass
+class RegisterVideosRequest:
+    items: List[RegisterVideosRequestItem]

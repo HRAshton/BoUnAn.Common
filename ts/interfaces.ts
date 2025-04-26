@@ -29,6 +29,7 @@ export interface VideoDownloadedNotification {
     MessageId?: number;
     SubscriberChatIds?: number[];
     Scenes?: Scenes;
+    PublishingDetails?: PublishingDetails;
 }
 
 export interface VideoRegisteredNotificationItem {
@@ -70,6 +71,29 @@ export interface BotResponse {
     Status: VideoStatus;
     MessageId?: number;
     Scenes?: Scenes;
+    PublishingDetails?: PublishingDetails;
+}
+
+export interface PublishingDetails {
+    ThreadId: number;
+    MessageId: number;
+}
+
+export interface PublisherResultRequestItem {
+    VideoKey: VideoKey;
+    PublishingDetails: PublishingDetails;
+}
+
+export interface PublisherResultRequest {
+    Items: PublisherResultRequestItem[];
+}
+
+export interface RegisterVideosRequestItem {
+    VideoKey: VideoKey;
+}
+
+export interface RegisterVideosRequest {
+    Items: RegisterVideosRequestItem[];
 }
 
 export type VideoStatus = 'Pending' | 'Downloading' | 'Downloaded' | 'Failed' | 'NotAvailable';
