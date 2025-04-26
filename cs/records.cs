@@ -1,9 +1,40 @@
-﻿using System.Collections.Generic;
-
-#pragma warning disable SA1649
+﻿ #pragma warning disable SA1649
 #pragma warning disable SA1402
 
 namespace Bounan.Common;
+
+public enum VideoStatus
+{
+    /// <summary>
+    /// Unknown status. This is the default value. Should not be used.
+    /// </summary>
+    Unknown,
+
+    /// <summary>
+    /// Scheduled for download. The video is not yet available.
+    /// </summary>
+    Pending,
+
+    /// <summary>
+    /// The video is being downloaded.
+    /// </summary>
+    Downloading,
+
+    /// <summary>
+    /// The video has been downloaded successfully.
+    /// </summary>
+    Downloaded,
+
+    /// <summary>
+    /// The video has not been downloaded due to an error.
+    /// </summary>
+    Failed,
+
+    /// <summary>
+    /// The video is not available for download. This can happen if the video has been removed or is not accessible.
+    /// </summary>
+    NotAvailable,
+}
 
 public interface IVideoKey
 {
@@ -24,7 +55,11 @@ public record SceneRecognisedNotificationItem(VideoKey VideoKey, Scenes? Scenes)
 
 public record SceneRecognisedNotification(List<SceneRecognisedNotificationItem> Items);
 
-public record VideoDownloadedNotification(VideoKey VideoKey, int? MessageId, List<long>? SubscriberChatIds, Scenes? Scenes);
+public record VideoDownloadedNotification(
+    VideoKey VideoKey,
+    int? MessageId,
+    List<long>? SubscriberChatIds,
+    Scenes? Scenes);
 
 public record VideoRegisteredNotificationItem(VideoKey VideoKey);
 
@@ -43,13 +78,3 @@ public record DownloaderResultRequest(VideoKey VideoKey, int? MessageId);
 public record BotRequest(VideoKey VideoKey, long ChatId);
 
 public record BotResponse(VideoStatus Status, int? MessageId, Scenes? Scenes);
-
-public enum VideoStatus
-{
-    Unknown,
-    Pending,
-    Downloading,
-    Downloaded,
-    Failed,
-    NotAvailable,
-}
