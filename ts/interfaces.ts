@@ -27,7 +27,6 @@ export interface SceneRecognisedNotification {
 export interface VideoDownloadedNotification {
     VideoKey: VideoKey;
     MessageId?: number;
-    SubscriberChatIds?: number[];
     Scenes?: Scenes;
     PublishingDetails?: PublishingDetails;
 }
@@ -64,7 +63,6 @@ export interface DownloaderResultRequest {
 
 export interface BotRequest {
     VideoKey: VideoKey;
-    ChatId: number;
 }
 
 export interface BotResponse {

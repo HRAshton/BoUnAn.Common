@@ -53,7 +53,6 @@ class SceneRecognisedNotification:
 class VideoDownloadedNotification:
     video_key: VideoKey
     message_id: Optional[int] = None
-    subscriber_chat_ids: Optional[List[int]] = None
     scenes: Optional[Scenes] = None
     publishing_details: Optional[PublishingDetails] = None
 
@@ -106,7 +105,6 @@ class DownloaderResultRequest:
 @dataclass
 class BotRequest:
     video_key: VideoKey
-    chat_id: int
 
 
 class VideoStatus(Enum):

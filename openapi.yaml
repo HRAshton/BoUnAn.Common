@@ -76,11 +76,6 @@ components:
         MessageId:
           type: integer
           format: int32
-        SubscriberChatIds:
-          type: array
-          items:
-            type: integer
-            format: int64
         Scenes:
           $ref: '#/components/schemas/Scenes'
         PublishingDetails:
@@ -168,12 +163,8 @@ components:
       properties:
         VideoKey:
           $ref: '#/components/schemas/VideoKey'
-        ChatId:
-          type: integer
-          format: int64
       required:
         - VideoKey
-        - ChatId
       additionalProperties: false
     
     BotResponse:

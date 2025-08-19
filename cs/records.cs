@@ -55,7 +55,7 @@ public record SceneRecognisedNotificationItem(VideoKey VideoKey, Scenes? Scenes)
 
 public record SceneRecognisedNotification(List<SceneRecognisedNotificationItem> Items);
 
-public record VideoDownloadedNotification(VideoKey VideoKey, int? MessageId, List<long>? SubscriberChatIds, Scenes? Scenes, PublishingDetails? PublishingDetails);
+public record VideoDownloadedNotification(VideoKey VideoKey, int? MessageId, Scenes? Scenes, PublishingDetails? PublishingDetails);
 
 public record VideoRegisteredNotificationItem(VideoKey VideoKey);
 
@@ -71,7 +71,7 @@ public record DownloaderResponse(VideoKey VideoKey);
 
 public record DownloaderResultRequest(VideoKey VideoKey, int? MessageId);
 
-public record BotRequest(VideoKey VideoKey, long ChatId);
+public record BotRequest(VideoKey VideoKey);
 
 public record BotResponse(VideoStatus Status, int? MessageId, Scenes? Scenes, PublishingDetails? PublishingDetails);
 
