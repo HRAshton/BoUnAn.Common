@@ -1,97 +1,97 @@
 ﻿export interface VideoKey {
-    MyAnimeListId: number;
-    Dub: string;
-    Episode: number;
+    myAnimeListId: number;
+    dub: string;
+    episode: number;
 }
 
 export interface Interval {
-    Start: number;
-    End: number;
+    start: number;
+    end: number;
 }
 
 export interface Scenes {
-    Opening?: Interval;
-    Ending?: Interval;
-    SceneAfterEnding?: Interval;
+    opening?: Interval;
+    ending?: Interval;
+    sceneAfterEnding?: Interval;
 }
 
 export interface SceneRecognisedNotificationItem {
-    VideoKey: VideoKey;
-    Scenes?: Scenes;
+    videoKey: VideoKey;
+    scenes?: Scenes;
 }
 
 export interface SceneRecognisedNotification {
-    Items: SceneRecognisedNotificationItem[];
+    items: SceneRecognisedNotificationItem[];
 }
 
 export interface VideoDownloadedNotification {
-    VideoKey: VideoKey;
-    MessageId?: number;
-    Scenes?: Scenes;
-    PublishingDetails?: PublishingDetails;
+    videoKey: VideoKey;
+    messageId?: number;
+    scenes?: Scenes;
+    publishingDetails?: PublishingDetails;
 }
 
 export interface VideoRegisteredNotificationItem {
-    VideoKey: VideoKey;
+    videoKey: VideoKey;
 }
 
 export interface VideoRegisteredNotification {
-    Items: VideoRegisteredNotificationItem[];
+    items: VideoRegisteredNotificationItem[];
 }
 
 export interface MatcherResponse {
-    VideosToMatch: VideoKey[];
+    videosToMatch: VideoKey[];
 }
 
 export interface MatcherResultRequestItem {
-    VideoKey: VideoKey;
-    Scenes: Scenes;
+    videoKey: VideoKey;
+    scenes: Scenes;
 }
 
 export interface MatcherResultRequest {
-    Items: MatcherResultRequestItem[];
+    items: MatcherResultRequestItem[];
 }
 
 export interface DownloaderResponse {
-    VideoKey?: VideoKey;
+    videoKey?: VideoKey;
 }
 
 export interface DownloaderResultRequest {
-    VideoKey: VideoKey;
-    MessageId?: number;
+    videoKey: VideoKey;
+    messageId?: number;
 }
 
 export interface BotRequest {
-    VideoKey: VideoKey;
+    videoKey: VideoKey;
 }
 
 export interface BotResponse {
-    Status: VideoStatus;
-    MessageId?: number;
-    Scenes?: Scenes;
-    PublishingDetails?: PublishingDetails;
+    status: VideoStatus;
+    messageId?: number;
+    scenes?: Scenes;
+    publishingDetails?: PublishingDetails;
 }
 
 export interface PublishingDetails {
-    ThreadId: number;
-    MessageId: number;
+    threadId: number;
+    messageId: number;
 }
 
 export interface PublisherResultRequestItem {
-    VideoKey: VideoKey;
-    PublishingDetails: PublishingDetails;
+    videoKey: VideoKey;
+    publishingDetails: PublishingDetails;
 }
 
 export interface PublisherResultRequest {
-    Items: PublisherResultRequestItem[];
+    items: PublisherResultRequestItem[];
 }
 
 export interface RegisterVideosRequestItem {
-    VideoKey: VideoKey;
+    videoKey: VideoKey;
 }
 
 export interface RegisterVideosRequest {
-    Items: RegisterVideosRequestItem[];
+    items: RegisterVideosRequestItem[];
 }
 
 export type VideoStatus = 'Pending' | 'Downloading' | 'Downloaded' | 'Failed' | 'NotAvailable';
