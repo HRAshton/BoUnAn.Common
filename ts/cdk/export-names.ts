@@ -1,9 +1,8 @@
 export enum ExportNames {
   AlertEmail = 'alert-email',
-  LoanApiToken = 'loan-api-token',
 
-  GetEpisodesFunctionName = 'loan-api-get-episodes-function-name',
-  GetDubsFunctionName = 'loan-api-get-dubs-function-name',
+  LoanApiGetDubsFunctionName = 'loan-api-get-episodes-function-name',
+  LoanApiGetEpisodesFunctionName = 'loan-api-get-dubs-function-name',
 
   VideoRegisteredSnsTopicArn = 'video-registered-sns-topic-arn',
   VideoDownloadedSnsTopicArn = 'video-downloaded-sns-topic-arn',
