@@ -80,6 +80,7 @@ class MatcherResponse:
 class MatcherResultRequestItem:
     video_key: VideoKey
     scenes: Scenes
+    is_failed: bool
 
 
 @dataclass_json(letter_case=LetterCase.CAMEL)

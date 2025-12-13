@@ -120,9 +120,12 @@ components:
           $ref: '#/components/schemas/VideoKey'
         scenes:
           $ref: '#/components/schemas/Scenes'
+        isFailed:
+          type: boolean
       required:
         - videoKey
         - scenes
+        - isFailed
       additionalProperties: false
 
     MatcherResultRequest:
