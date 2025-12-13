@@ -45,7 +45,7 @@ export interface MatcherResponse {
 
 export interface MatcherResultRequestItem {
     videoKey: VideoKey;
-    scenes: Scenes;
+    scenes?: Scenes;
 }
 
 export interface MatcherResultRequest {

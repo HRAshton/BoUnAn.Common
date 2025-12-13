@@ -122,7 +122,6 @@ components:
           $ref: '#/components/schemas/Scenes'
       required:
         - videoKey
-        - scenes
       additionalProperties: false
 
     MatcherResultRequest:

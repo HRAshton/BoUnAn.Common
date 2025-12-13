@@ -79,7 +79,7 @@ class MatcherResponse:
 @dataclass
 class MatcherResultRequestItem:
     video_key: VideoKey
-    scenes: Scenes
+    scenes: Optional[Scenes]
 
 
 @dataclass_json(letter_case=LetterCase.CAMEL)

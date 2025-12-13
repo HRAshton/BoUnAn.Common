@@ -63,7 +63,7 @@ public record VideoRegisteredNotification(List<VideoRegisteredNotificationItem> 
 
 public record MatcherResponse(List<VideoKey> VideosToMatch);
 
-public record MatcherResultRequestItem(VideoKey VideoKey, Scenes Scenes);
+public record MatcherResultRequestItem(VideoKey VideoKey, Scenes? Scenes);
 
 public record MatcherResultRequest(List<MatcherResultRequestItem> Items);
 
